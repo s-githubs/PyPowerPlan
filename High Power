@@ -1,0 +1,23 @@
+import subprocess
+
+def change_power_plan(plan_guid):
+    try:
+        # Run the powercfg command to change the power plan
+        subprocess.run(['powercfg', '-setactive', plan_guid], check=True)
+        print("Power plan changed successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error: {e}")
+
+if __name__ == "__main__":
+    # Replace '381b4222-f694-41f0-9685-ff5bb260df2e' with the GUID of the 'Balanced' power plan
+    change_power_plan('8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c')
+
+
+
+
+
+
+
+
+
+
